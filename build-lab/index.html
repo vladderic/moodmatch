@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Stop scrolling. Start playing. Tell us the mood you're in and get a short list of games that clear the 80% bar."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="moodmatch — Stop scrolling. Start playing." />
+  <meta
+    property="og:description"
+    content="Tell us the mood you're in and get a short list of games that clear the 80% bar."
+  />
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23F5A623'/%3E%3C/svg%3E"
+  />
+  <title>moodmatch — Stop scrolling. Start playing.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="brand" href="#top">
+      <span class="brand-mark"></span>
+      moodmatch
+    </a>
+    <a class="btn btn-primary btn-small" href="#matcher">Match my mood</a>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <h1>Stop scrolling.<br />Start playing.</h1>
+      <p class="hero-sub">
+        Tell us the mood you're in. We only show you games that clear the 80% bar.
+      </p>
+      <a class="btn btn-primary" href="#matcher">Match my mood</a>
+    </section>
+
+    <section class="problem">
+      <h2>Your library is full.<br />You still play nothing.</h2>
+      <ul class="pain-list">
+        <li>30–60 minutes scrolling, with no pickup in sight.</li>
+        <li>Six games each have a piece of what you want — none has the whole thing.</li>
+        <li>Then YouTube and the doomscroll win.</li>
+      </ul>
+      <p class="problem-bridge">This is where that ends.</p>
+    </section>
+
+    <section class="solution">
+      <h2>The 80% bar.</h2>
+      <p class="solution-text">
+        Pick a few mood categories and get only your 80%+ matches back.
+        One screen. A short list. No tag walls, no Steam login.
+      </p>
+    </section>
+
+    <section class="features">
+      <h2>Everything you want.<br />Nothing you don't.</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Mood categories</h3>
+          <p>Relaxing, co-op, combat, survival — name the feeling or the category.</p>
+        </div>
+        <div class="feature-card">
+          <h3>A plain verdict</h3>
+          <p>Every game gets a clear "80% match" readout. No algorithm babble.</p>
+        </div>
+        <div class="feature-card">
+          <h3>A short list</h3>
+          <p>Only games clearing the bar — no tag walls, no Steam login, no setup.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof">
+      <h2>Built for the backlog.</h2>
+      <blockquote>
+        "I stopped losing evenings to my library screen."
+        <cite>— the founder, 235-game library</cite>
+      </blockquote>
+      <p class="muted">Founded by a gamer with a 235-game library. The doomscroll ends here.</p>
+    </section>
+
+    <section class="matcher" id="matcher">
+      <h2>Next time you're stuck — don't scroll.</h2>
+      <p class="muted">No accounts. No login. Just your mood and a short list.</p>
+      <form id="matcher-form">
+        <div class="matcher-top">
+          <p class="matcher-hint" id="mood-hint">Select up to 5.</p>
+          <button type="button" id="clear-all" class="mood-reset" hidden>Clear all</button>
+        </div>
+        <p id="limit-msg" class="matcher-limit" hidden>You can only pick up to 5.</p>
+        <fieldset>
+          <legend class="sr-only">What are you in the mood for?</legend>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="relaxing" />
+            <span>Relaxing</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="story" />
+            <span>Story-heavy</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="quick" />
+            <span>Quick sessions</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="combat" />
+            <span>Combat</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="survival" />
+            <span>Survival</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="cozy" />
+            <span>Cozy</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="fps" />
+            <span>FPS</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="coop" />
+            <span>Co-Op</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="singleplayer" />
+            <span>Singleplayer</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="multiplayer" />
+            <span>Multiplayer</span>
+          </label>
+          <label class="mood-chip">
+            <input type="checkbox" name="mood" value="incremental" />
+            <span>Incremental</span>
+          </label>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Match my mood</button>
+      </form>
+      <div id="results" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#top">moodmatch</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

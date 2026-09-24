@@ -1,0 +1,13 @@
+# Dependencies and build junk
+node_modules/
+__pycache__/
+*.py[cod]
+
+# OS / editor files
+.DS_Store
+
+# Course scaffolding (lesson pages + screenshots) — not part of the project
+.guides/
+
+# Local logs
+*.log
